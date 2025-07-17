@@ -46,7 +46,9 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))',
 					warm: 'hsl(var(--accent-warm))',
-					orange: 'hsl(var(--accent-orange))'
+					orange: 'hsl(var(--accent-orange))',
+					purple: 'hsl(var(--accent-purple))',
+					blue: 'hsl(var(--accent-blue))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -71,12 +73,18 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-sage': 'var(--gradient-sage)'
+				'gradient-sage': 'var(--gradient-sage)',
+				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-cool': 'var(--gradient-cool)',
+				'gradient-purple': 'var(--gradient-purple)',
+				'gradient-sunset': 'var(--gradient-sunset)'
 			},
 			boxShadow: {
 				'light': 'var(--shadow-light)',
 				'medium': 'var(--shadow-medium)',
-				'heavy': 'var(--shadow-heavy)'
+				'heavy': 'var(--shadow-heavy)',
+				'colorful': 'var(--shadow-colorful)',
+				'warm': 'var(--shadow-warm)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Shield, Clock, Users, Phone, MessageCircle, Scale, Wallet, User, Baby, Stethoscope, Activity, Globe, Star, CheckCircle, Calendar, ArrowRight, Menu, X } from "lucide-react";
+import { Heart, Shield, Clock, Users, Phone, MessageCircle, Scale, Wallet, User, Baby, Stethoscope, Activity, Globe, Star, CheckCircle, Calendar, ArrowRight, Menu, X, Sparkles, Zap, Award } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import therapyImage from "@/assets/therapy-session.jpg";
+import expertTeamImage from "@/assets/expert-team.jpg";
+import meditationImage from "@/assets/meditation-wellness.jpg";
+import videoConsultationImage from "@/assets/video-consultation.jpg";
 import { useState } from "react";
 
 const Index = () => {
@@ -226,217 +230,348 @@ const Index = () => {
       </section>
 
       {/* What Brings You Here Section */}
-      <section id="services" className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="services" className="py-20 bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-warm opacity-5 rounded-full -translate-y-40 -translate-x-40"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-purple opacity-8 rounded-full translate-y-32 translate-x-32"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">What Brings You Here?</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <div className="flex items-center justify-center mb-6">
+              <Heart className="w-8 h-8 text-accent-purple mr-3" />
+              <h2 className="text-4xl font-bold text-foreground">What Brings You Here?</h2>
+            </div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Are you seeking guidance in relationships, intimacy, nutrition, mental wellness, law, or finance? 
               SABA SOCIAL is your nest of supergood feel anchors.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 cursor-pointer border-border/50">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <service.icon className="w-8 h-8 text-foreground" />
-                  </div>
-                  <CardTitle className="text-lg text-foreground">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            {services.map((service, index) => {
+              const gradients = ['gradient-warm', 'gradient-cool', 'gradient-purple', 'gradient-sunset', 'gradient-secondary', 'gradient-primary'];
+              const gradient = gradients[index % gradients.length];
+              
+              return (
+                <Card key={index} className="group hover:shadow-colorful transition-all duration-300 hover:-translate-y-2 cursor-pointer border-border/50 overflow-hidden">
+                  <CardHeader className="text-center pb-4">
+                    <div className={`mx-auto w-16 h-16 bg-${gradient} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-medium`}>
+                      <service.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <CardTitle className="text-lg text-foreground group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-center text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">Support available in multiple languages</p>
+          <div className="text-center mt-16">
+            <p className="text-muted-foreground mb-8 text-lg">Support available in multiple languages</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="hero" size="lg">Book Session</Button>
-              <Button variant="hero-secondary" size="lg">Learn More</Button>
-              <Button variant="wellness" size="lg">Subscription Info</Button>
+              <Button variant="warm" size="lg">Book Session</Button>
+              <Button variant="cool" size="lg">Learn More</Button>
+              <Button variant="purple" size="lg">Subscription Info</Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose SABA SOCIAL */}
-      <section id="about" className="py-20 bg-gradient-sage">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Why Choose SABA SOCIAL?</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're committed to providing comprehensive, compassionate care for every aspect of your wellbeing.
-            </p>
+      <section id="about" className="py-20 bg-gradient-sage relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-purple opacity-10 rounded-full -translate-y-32 translate-x-32"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-warm opacity-15 rounded-full translate-y-24 -translate-x-24"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <div className="flex items-center mb-6">
+                <Sparkles className="w-8 h-8 text-accent-warm mr-3" />
+                <h2 className="text-4xl font-bold text-foreground">Why Choose SABA SOCIAL?</h2>
+              </div>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                We're committed to providing comprehensive, compassionate care for every aspect of your wellbeing. 
+                Our unique approach combines professional expertise with genuine human connection.
+              </p>
+            </div>
+            <div className="lg:ml-8">
+              <img 
+                src={therapyImage} 
+                alt="Professional therapy session at SABA SOCIAL" 
+                className="rounded-2xl shadow-heavy w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyChooseUs.map((item, index) => (
-              <div key={index} className="text-center group">
-                <div className="mx-auto w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-medium group-hover:shadow-heavy transition-all duration-300">
-                  <item.icon className="w-10 h-10 text-primary" />
+            {whyChooseUs.map((item, index) => {
+              const gradients = ['gradient-warm', 'gradient-cool', 'gradient-purple', 'gradient-sunset', 'gradient-secondary', 'gradient-primary'];
+              const gradient = gradients[index % gradients.length];
+              
+              return (
+                <div key={index} className="text-center group">
+                  <div className={`mx-auto w-20 h-20 bg-${gradient} rounded-full flex items-center justify-center mb-6 shadow-colorful group-hover:shadow-heavy group-hover:scale-110 transition-all duration-300`}>
+                    <item.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-4">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">How the Booking Process Works</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Simple, straightforward steps to get the support you need.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-6 text-white font-bold text-xl shadow-medium">
-                  {step.number}
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
-                
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full">
-                    <ArrowRight className="mx-auto text-primary/30 w-6 h-6" />
-                  </div>
-                )}
+      <section className="py-20 bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-cool opacity-5 rounded-full -translate-y-48 -translate-x-48"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-warm opacity-10 rounded-full translate-y-40 translate-x-40"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <div className="flex items-center mb-6">
+                <Zap className="w-8 h-8 text-accent-orange mr-3" />
+                <h2 className="text-4xl font-bold text-foreground">How the Booking Process Works</h2>
               </div>
-            ))}
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Simple, straightforward steps to get the support you need. Our streamlined process ensures you can 
+                connect with the right expert quickly and easily.
+              </p>
+              
+              <div className="space-y-6">
+                {processSteps.map((step, index) => {
+                  const colors = ['text-accent-warm', 'text-accent-blue', 'text-accent-purple', 'text-accent-orange'];
+                  const bgColors = ['bg-gradient-warm', 'bg-gradient-cool', 'bg-gradient-purple', 'bg-gradient-sunset'];
+                  
+                  return (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className={`w-12 h-12 ${bgColors[index]} rounded-full flex items-center justify-center text-white font-bold shadow-colorful flex-shrink-0`}>
+                        {step.number}
+                      </div>
+                      <div>
+                        <h3 className={`text-lg font-semibold ${colors[index]} mb-2`}>{step.title}</h3>
+                        <p className="text-muted-foreground">{step.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            
+            <div className="lg:ml-8">
+              <img 
+                src={videoConsultationImage} 
+                alt="Video consultation with SABA SOCIAL expert" 
+                className="rounded-2xl shadow-heavy w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center">
             <p className="text-muted-foreground mb-6">Multilingual and accessible support throughout your journey</p>
-            <Button variant="hero" size="xl">Start Your Journey</Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button variant="sunset" size="xl">Start Your Journey</Button>
+              <Button variant="cool" size="xl">Emergency Support</Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-secondary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Our Success Stories</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real stories from real people who found support and healing with SABA SOCIAL.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="shadow-medium hover:shadow-heavy transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-accent-warm text-accent-warm" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">Verified Client</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+      <section className="py-20 bg-gradient-secondary/10 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-purple opacity-8 rounded-full -translate-y-36 -translate-x-36"></div>
+        <div className="absolute bottom-0 right-0 w-56 h-56 bg-gradient-sunset opacity-12 rounded-full translate-y-28 translate-x-28"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <div className="flex items-center mb-6">
+                <Award className="w-8 h-8 text-accent-purple mr-3" />
+                <h2 className="text-4xl font-bold text-foreground">Our Success Stories</h2>
+              </div>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Real stories from real people who found support and healing with SABA SOCIAL. 
+                Every journey is unique, and every success story inspires us to do better.
+              </p>
+              
+              <div className="grid gap-6">
+                {testimonials.map((testimonial, index) => {
+                  const gradients = ['gradient-warm', 'gradient-cool', 'gradient-purple'];
+                  const gradient = gradients[index % gradients.length];
+                  
+                  return (
+                    <Card key={index} className="shadow-medium hover:shadow-heavy transition-all duration-300 group">
+                      <CardContent className="p-6">
+                        <div className="flex mb-4">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-accent-warm text-accent-warm" />
+                          ))}
+                        </div>
+                        <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
+                        <div className="flex items-center">
+                          <div className={`w-12 h-12 bg-${gradient} rounded-full flex items-center justify-center text-white font-semibold mr-4 group-hover:scale-110 transition-transform`}>
+                            {testimonial.name.charAt(0)}
+                          </div>
+                          <div>
+                            <p className="font-semibold text-foreground">{testimonial.name}</p>
+                            <p className="text-sm text-muted-foreground">Verified Client</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+            
+            <div className="lg:ml-8">
+              <img 
+                src={meditationImage} 
+                alt="Peaceful meditation representing wellness and inner peace" 
+                className="rounded-2xl shadow-heavy w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Meet Our Experts */}
-      <section id="experts" className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Connect With Our Experts</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our team of qualified professionals is here to support you on your wellness journey.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {experts.map((expert, index) => (
-              <Card key={index} className="shadow-medium hover:shadow-heavy transition-all duration-300 group">
-                <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6 group-hover:scale-105 transition-transform">
-                    {expert.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{expert.name}</h3>
-                  <p className="text-primary font-medium mb-2">{expert.specialty}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{expert.experience} experience</p>
-                  <p className="text-muted-foreground mb-6">{expert.approach}</p>
-                  <Button variant="hero" size="sm" className="w-full">Book Session</Button>
-                </CardContent>
-              </Card>
-            ))}
+      <section id="experts" className="py-20 bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-cool opacity-8 rounded-full -translate-y-32 translate-x-32"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-purple opacity-12 rounded-full translate-y-24 -translate-x-24"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <div className="flex items-center mb-6">
+                <Users className="w-8 h-8 text-accent-blue mr-3" />
+                <h2 className="text-4xl font-bold text-foreground">Connect With Our Experts</h2>
+              </div>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Our team of qualified professionals is here to support you on your wellness journey. 
+                Each expert brings years of experience and a deep commitment to your wellbeing.
+              </p>
+              
+              <div className="grid gap-6">
+                {experts.map((expert, index) => {
+                  const gradients = ['gradient-warm', 'gradient-cool', 'gradient-purple'];
+                  const gradient = gradients[index % gradients.length];
+                  
+                  return (
+                    <Card key={index} className="shadow-medium hover:shadow-heavy transition-all duration-300 group">
+                      <CardContent className="p-6">
+                        <div className="flex items-center space-x-4">
+                          <div className={`w-16 h-16 bg-${gradient} rounded-full flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform flex-shrink-0`}>
+                            {expert.name.split(' ').map(n => n[0]).join('')}
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-foreground mb-1">{expert.name}</h3>
+                            <p className="text-primary font-medium mb-1">{expert.specialty}</p>
+                            <p className="text-sm text-muted-foreground mb-2">{expert.experience} experience</p>
+                            <p className="text-sm text-muted-foreground">{expert.approach}</p>
+                          </div>
+                          <Button variant="warm" size="sm">Book Session</Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+            
+            <div className="lg:ml-8">
+              <img 
+                src={expertTeamImage} 
+                alt="Diverse team of SABA SOCIAL experts and professionals" 
+                className="rounded-2xl shadow-heavy w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Join as Expert */}
-      <section className="py-20 bg-gradient-sage">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Join SABA SOCIAL as an Expert</h2>
-          <p className="text-xl text-muted-foreground mb-12">
-            Are you a qualified professional in therapy, nutrition, law, or other wellness fields? Join our community of experts.
+      <section className="py-20 bg-gradient-sage relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-warm opacity-8 rounded-full -translate-y-48 -translate-x-48"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-cool opacity-10 rounded-full translate-y-36 translate-x-36"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <div className="flex items-center justify-center mb-6">
+            <Users className="w-8 h-8 text-accent-orange mr-3" />
+            <h2 className="text-4xl font-bold text-foreground">Join SABA SOCIAL as an Expert</h2>
+          </div>
+          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+            Are you a qualified professional in therapy, nutrition, law, or other wellness fields? Join our community of experts 
+            and make a meaningful impact while growing your practice.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Benefits for Experts:</h3>
+            <Card className="p-6 shadow-colorful hover:shadow-heavy transition-all duration-300 group">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-warm rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">Benefits for Experts:</h3>
+              </div>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent-warm mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">Convenient: Consult remotely and connect with audiences</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent-warm mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">Flexible: Create your own appointment calendar</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent-warm mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">Personal Branding: Contact us for our branding programme</span>
                 </li>
               </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">More Benefits:</h3>
+            </Card>
+            
+            <Card className="p-6 shadow-colorful hover:shadow-heavy transition-all duration-300 group">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gradient-cool rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">More Benefits:</h3>
+              </div>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent-blue mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">Fast Payments: Payouts settled within a week</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent-blue mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">Peer Community: Connected, supportive professional environment</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent-blue mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">Growth Support: Marketing and business development assistance</span>
                 </li>
               </ul>
-            </div>
+            </Card>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl">Become an Anchor</Button>
-            <Button variant="hero-secondary" size="xl">Contact Us to Learn More</Button>
+            <Button variant="sunset" size="xl" className="group">
+              <Award className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              Become an Anchor
+            </Button>
+            <Button variant="purple" size="xl" className="group">
+              <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              Contact Us to Learn More
+            </Button>
           </div>
         </div>
       </section>
