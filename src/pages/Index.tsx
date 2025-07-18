@@ -136,6 +136,39 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Floating Social CTA Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
+        <a
+          href="https://wa.me/918073286312" // SABA WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center px-4 py-2 rounded-full shadow-lg bg-green-500 hover:bg-green-600 transition-colors text-white font-semibold text-base gap-2 relative"
+          style={{ boxShadow: '0 0 16px 4px #22c55e, 0 2px 8px rgba(0,0,0,0.12)' }}
+        >
+          <MessageCircle className="w-6 h-6 animate-whatsapp-glow" style={{ verticalAlign: 'middle' }} />
+          WhatsApp Us
+        </a>
+        <style>{`
+          @keyframes whatsapp-glow {
+            0%, 100% { filter: drop-shadow(0 0 8px #22c55e); }
+            50% { filter: drop-shadow(0 0 16px #22c55e); }
+          }
+          .animate-whatsapp-glow {
+            animation: whatsapp-glow 1.2s infinite;
+          }
+        `}</style>
+        <a
+          href="https://instagram.com/xabasocial" // SABA Instagram profile
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center px-4 py-2 rounded-full shadow-lg bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 hover:from-pink-600 hover:via-purple-600 hover:to-yellow-600 transition-colors text-white font-semibold text-base gap-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+          </svg>
+          Follow on Instagram
+        </a>
+      </div>
       {/* Navigation */}
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-border z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,8 +186,8 @@ const Index = () => {
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
-              <Button variant="hero-secondary" size="sm">Join as Expert</Button>
-              <Button variant="hero" size="sm">Book Session</Button>
+              <Button variant="hero-secondary" size="sm" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>Join as Expert</Button>
+              <Button variant="hero" size="sm" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>Book Session</Button>
             </div>
 
             {/* Mobile menu button */}
@@ -175,8 +208,14 @@ const Index = () => {
                 <a href="#experts" className="text-foreground hover:text-primary transition-colors font-medium">Experts</a>
                 <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">Contact</a>
                 <div className="flex flex-col space-y-2 pt-4">
-                  <Button variant="hero-secondary" size="sm">Join as Expert</Button>
-                  <Button variant="hero" size="sm">Book Session</Button>
+              <Button
+                variant="hero-secondary"
+                size="sm"
+                onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}
+              >
+                Join as Expert
+              </Button>
+              <Button variant="hero" size="sm" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}  rel="noopener noreferrer">Book Session</Button>
                 </div>
               </nav>
             </div>
@@ -205,12 +244,9 @@ const Index = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button variant="hero" size="xl" className="group">
+                <Button variant="hero" size="xl" className="group" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>
                   Book Your Appointment
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button variant="hero-secondary" size="xl">
-                  Learn How SABA Therapy Works?
                 </Button>
               </div>
 
@@ -285,9 +321,8 @@ const Index = () => {
           <div className="text-center mt-16">
             <p className="text-muted-foreground mb-8 text-lg">Support available in multiple languages</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="warm" size="lg">Book Session</Button>
-              <Button variant="cool" size="lg">Learn More</Button>
-              <Button variant="purple" size="lg">Subscription Info</Button>
+              <Button variant="warm" size="lg" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>Book Session</Button>
+
             </div>
           </div>
         </div>
@@ -390,7 +425,6 @@ const Index = () => {
             <p className="text-muted-foreground mb-6">Multilingual and accessible support throughout your journey</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="sunset" size="xl">Start Your Journey</Button>
-              <Button variant="cool" size="xl">Emergency Support</Button>
             </div>
           </div>
         </div>
@@ -578,7 +612,7 @@ const Index = () => {
                             <p className="text-sm text-muted-foreground mb-2">{expert.experience} experience</p>
                             <p className="text-sm text-muted-foreground">{expert.approach}</p>
                           </div>
-                          <Button variant="warm" size="sm">Book Session</Button>
+                          <Button variant="warm" size="sm" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>Book Session</Button>
                         </div>
                       </CardContent>
                     </Card>
@@ -663,11 +697,11 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="sunset" size="xl" className="group">
+            <Button variant="sunset" size="xl" className="group" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>
               <Award className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Become an Anchor
             </Button>
-            <Button variant="purple" size="xl" className="group">
+            <Button variant="purple" size="xl" className="group" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>
               <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Contact Us to Learn More
             </Button>
@@ -684,7 +718,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero-secondary" size="xl" className="bg-white text-primary-dark hover:bg-white/90">
+            <Button variant="hero-secondary" size="xl" className="bg-white text-primary-dark hover:bg-white/90" onClick={() => window.open("https://wa.me/918073286312", "_blank", "noopener,noreferrer")}>
               <Calendar className="w-5 h-5 mr-2" />
               Book Your Session Now
             </Button>
@@ -727,10 +761,10 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-white/80">
-                <li><a href="#" className="hover:text-white transition-colors">Book Now</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Join as Expert</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Resources</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Emergency Support</a></li>
+                <li><a href="https://wa.me/918073286312" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Book Now</a></li>
+                <li><a href="https://wa.me/918073286312" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Join as Expert</a></li>
+                <li><a href="https://wa.me/918073286312" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Resources</a></li>
+                <li><a href="https://wa.me/918073286312" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Emergency Support</a></li>
               </ul>
             </div>
           </div>
