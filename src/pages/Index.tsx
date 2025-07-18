@@ -138,30 +138,37 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Floating Social CTA Buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
+
+        <style>{`
+          @keyframes whatsapp-glow-outline {
+            0%, 100% { box-shadow: 0 0 8px 2px #22c55e; }
+            50% { box-shadow: 0 0 16px 4px #22c55e; }
+          }
+          .animate-whatsapp-glow-outline {
+            animation: whatsapp-glow-outline 1.2s infinite;
+          }
+          @keyframes instagram-glow-outline {
+            0%, 100% { box-shadow: 0 0 8px 2px #e1306c; }
+            50% { box-shadow: 0 0 16px 4px #e1306c; }
+          }
+          .animate-instagram-glow-outline {
+            animation: instagram-glow-outline 1.2s infinite;
+          }
+        `}</style>
         <a
           href="https://wa.me/918073286312" // SABA WhatsApp number
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center px-4 py-2 rounded-full shadow-lg bg-green-500 hover:bg-green-600 transition-colors text-white font-semibold text-base gap-2 relative"
-          style={{ boxShadow: '0 0 16px 4px #22c55e, 0 2px 8px rgba(0,0,0,0.12)' }}
+          className="group flex items-center px-4 py-2 rounded-full shadow-lg bg-green-500 hover:bg-green-600 transition-colors text-white font-semibold text-base gap-2 relative animate-whatsapp-glow-outline"
         >
-          <MessageCircle className="w-6 h-6 animate-whatsapp-glow" style={{ verticalAlign: 'middle' }} />
+          <MessageCircle className="w-6 h-6" style={{ verticalAlign: 'middle' }} />
           WhatsApp Us
         </a>
-        <style>{`
-          @keyframes whatsapp-glow {
-            0%, 100% { filter: drop-shadow(0 0 8px #22c55e); }
-            50% { filter: drop-shadow(0 0 16px #22c55e); }
-          }
-          .animate-whatsapp-glow {
-            animation: whatsapp-glow 1.2s infinite;
-          }
-        `}</style>
         <a
           href="https://instagram.com/xabasocial" // SABA Instagram profile
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center px-4 py-2 rounded-full shadow-lg bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 hover:from-pink-600 hover:via-purple-600 hover:to-yellow-600 transition-colors text-white font-semibold text-base gap-2"
+          className="group flex items-center px-4 py-2 rounded-full shadow-lg bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 hover:from-pink-600 hover:via-purple-600 hover:to-yellow-600 transition-colors text-white font-semibold text-base gap-2 relative animate-instagram-glow-outline"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
             <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
