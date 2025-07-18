@@ -7,24 +7,36 @@ import therapyImage from "@/assets/therapy-session.jpg";
 import expertTeamImage from "@/assets/expert-team.jpg";
 import meditationImage from "@/assets/meditation-wellness.jpg";
 import videoConsultationImage from "@/assets/video-consultation.jpg";
+import marriageCounsellingImg from "@/assets/service-marriage-counselling.png";
+import datingCoachImg from "@/assets/service-dating-coach.png";
+import intimacyImg from "@/assets/service-intimacy.png";
+import relationshipAdviceImg from "@/assets/service-relationship-advice.png";
+import divorceGuidanceImg from "@/assets/service-divorce-guidance.png";
+import personalTherapyImg from "@/assets/service-personal-therapy.png";
+import nutritionistImg from "@/assets/service-nutritionist.png";
+import dermatologyImg from "@/assets/service-dermatology.png";
+import queerTherapyImg from "@/assets/service-queer-therapy.png";
+import lawyerImg from "@/assets/service-lawyer.png";
+import charteredAccountantImg from "@/assets/service-chartered-accountant.png";
+import familyPlanningImg from "@/assets/service-family-planning.png";
 import { useState } from "react";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const services = [
-    { icon: Heart, title: "Marriage Counselling", description: "Strengthen your relationship with expert guidance" },
-    { icon: Users, title: "Dating Coach", description: "Navigate dating with confidence and clarity" },
-    { icon: Heart, title: "Intimacy & Sex Advice", description: "Build deeper connections with professional support" },
-    { icon: MessageCircle, title: "Relationship Advice", description: "Get personalized relationship guidance" },
-    { icon: Scale, title: "Divorce Guidance", description: "Compassionate support through difficult transitions" },
-    { icon: User, title: "Personal Therapy", description: "Individual support for mental wellness" },
-    { icon: Stethoscope, title: "Nutritionist", description: "Holistic nutrition and wellness planning" },
-    { icon: Activity, title: "Dermatology", description: "Professional skin health consultations" },
-    { icon: Heart, title: "Queer Affirmative Therapy", description: "LGBTQ+ affirming mental health support" },
-    { icon: Scale, title: "Lawyer (IP & Contract)", description: "Legal expertise for intellectual property" },
-    { icon: Wallet, title: "Chartered Accountants", description: "Financial guidance and accounting services" },
-    { icon: Baby, title: "Family Planning", description: "Support for growing families" }
+    { image: marriageCounsellingImg, title: "Marriage Counselling", description: "Strengthen your relationship with expert guidance" },
+    { image: datingCoachImg, title: "Dating Coach", description: "Navigate dating with confidence and clarity" },
+    { image: intimacyImg, title: "Intimacy & Sex Advice", description: "Build deeper connections with professional support" },
+    { image: relationshipAdviceImg, title: "Relationship Advice", description: "Get personalized relationship guidance" },
+    { image: divorceGuidanceImg, title: "Divorce Guidance", description: "Compassionate support through difficult transitions" },
+    { image: personalTherapyImg, title: "Personal Therapy", description: "Individual support for mental wellness" },
+    { image: nutritionistImg, title: "Nutritionist", description: "Holistic nutrition and wellness planning" },
+    { image: dermatologyImg, title: "Dermatology", description: "Professional skin health consultations" },
+    { image: queerTherapyImg, title: "Queer Affirmative Therapy", description: "LGBTQ+ affirming mental health support" },
+    { image: lawyerImg, title: "Lawyer (IP & Contract)", description: "Legal expertise for intellectual property" },
+    { image: charteredAccountantImg, title: "Chartered Accountants", description: "Financial guidance and accounting services" },
+    { image: familyPlanningImg, title: "Family Planning", description: "Support for growing families" }
   ];
 
   const whyChooseUs = [
@@ -248,14 +260,15 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {services.map((service, index) => {
-              const gradients = ['gradient-warm', 'gradient-cool', 'gradient-purple', 'gradient-sunset', 'gradient-secondary', 'gradient-primary'];
-              const gradient = gradients[index % gradients.length];
-              
               return (
                 <Card key={index} className="group hover:shadow-colorful transition-all duration-300 hover:-translate-y-2 cursor-pointer border-border/50 overflow-hidden">
                   <CardHeader className="text-center pb-4">
-                    <div className={`mx-auto w-16 h-16 bg-${gradient} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-medium`}>
-                      <service.icon className="w-8 h-8 text-white" />
+                    <div className="mx-auto w-24 h-24 rounded-2xl overflow-hidden mb-4 group-hover:scale-110 transition-transform shadow-medium">
+                      <img 
+                        src={service.image} 
+                        alt={service.title} 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <CardTitle className="text-lg text-foreground group-hover:text-primary transition-colors">{service.title}</CardTitle>
                   </CardHeader>
@@ -419,55 +432,69 @@ const Index = () => {
 
           {/* Moving Testimonials */}
           <div className="overflow-hidden relative">
-            <div className="flex animate-[slide_30s_linear_infinite] space-x-6">
+            <div className="flex animate-[slide-horizontal_40s_linear_infinite] space-x-6 will-change-transform">
               {[
                 {
-                  name: "Tanya, 29",
-                  role: "Fitness Instructor",
-                  text: "This service genuinely supported me. They took care of the entire process, allowing me to focus on my training. They introduced me to a wonderful gentleman who shared my love for fitness and healthy lifestyle. The peace of mind was invaluable.",
-                  image: "/src/assets/therapy-session.jpg"
+                  name: "Neeta, 35",
+                  role: "Teacher",
+                  text: "I was overwhelmed. Everything! They filtered meetings, and even planned chemistry was undeniable, allowing me to focus on connecting with someone special. We had a beautiful wedding!",
+                  image: marriageCounsellingImg
                 },
                 {
-                  name: "Raj, 33",
-                  role: "Financial Analyst", 
-                  text: "I wanted a curated experience, and they delivered. They found me matches that genuinely resonated with me. One connection led to something special, and my family's involvement made the process even smoother.",
-                  image: "/src/assets/expert-team.jpg"
+                  name: "Priya, 32",
+                  role: "Software Engineer",
+                  text: "I met my husband through their service. They genuinely care about their clients. They filtered out the creeps and involved my parents, allowing me to focus on connecting with someone special.",
+                  image: datingCoachImg
                 },
                 {
-                  name: "Seema, 34",
-                  role: "HR Manager",
-                  text: "SABA made wellness easy by managing initial communications. They connected me with someone who shared my passion for volunteer work. Our first session involved serving at a local charity. I appreciate how they prioritized my values.",
-                  image: "/src/assets/meditation-wellness.jpg"
+                  name: "Vikram, 36",
+                  role: "University Lecturer",
+                  text: "Tired of endless messages, I found this service. They understood my needs and filtered through profiles. One day, they found someone who shared my love for technology and career ambitions. We clicked instantly!",
+                  image: personalTherapyImg
                 },
                 {
-                  name: "Rina, 28",
-                  role: "Graphic Designer",
-                  text: "Dealing with personal challenges, this service ensured I met compatible individuals. I remember feeling nervous about my journey, but their guidance shielded me from unnecessary stress and helped me find peace.",
-                  image: "/src/assets/video-consultation.jpg"
+                  name: "Kamini, 29",
+                  role: "Lawyer",
+                  text: "I was skeptical about online matchmaking, but this service changed my perspective. They thoroughly vetted profiles and introduced me to a woman who shared my passion for literature. We're in a meaningful relationship.",
+                  image: nutritionistImg
                 },
-                // Duplicate for seamless loop
+                // Duplicate set for seamless infinite loop
                 {
-                  name: "Tanya, 29",
-                  role: "Fitness Instructor",
-                  text: "This service genuinely supported me. They took care of the entire process, allowing me to focus on my training. They introduced me to a wonderful gentleman who shared my love for fitness and healthy lifestyle. The peace of mind was invaluable.",
-                  image: "/src/assets/therapy-session.jpg"
+                  name: "Neeta, 35",
+                  role: "Teacher",
+                  text: "I was overwhelmed. Everything! They filtered meetings, and even planned chemistry was undeniable, allowing me to focus on connecting with someone special. We had a beautiful wedding!",
+                  image: marriageCounsellingImg
                 },
                 {
-                  name: "Raj, 33",
-                  role: "Financial Analyst", 
-                  text: "I wanted a curated experience, and they delivered. They found me matches that genuinely resonated with me. One connection led to something special, and my family's involvement made the process even smoother.",
-                  image: "/src/assets/expert-team.jpg"
+                  name: "Priya, 32",
+                  role: "Software Engineer",
+                  text: "I met my husband through their service. They genuinely care about their clients. They filtered out the creeps and involved my parents, allowing me to focus on connecting with someone special.",
+                  image: datingCoachImg
+                },
+                {
+                  name: "Vikram, 36",
+                  role: "University Lecturer",
+                  text: "Tired of endless messages, I found this service. They understood my needs and filtered through profiles. One day, they found someone who shared my love for technology and career ambitions. We clicked instantly!",
+                  image: personalTherapyImg
+                },
+                {
+                  name: "Kamini, 29",
+                  role: "Lawyer",
+                  text: "I was skeptical about online matchmaking, but this service changed my perspective. They thoroughly vetted profiles and introduced me to a woman who shared my passion for literature. We're in a meaningful relationship.",
+                  image: nutritionistImg
                 }
               ].map((testimonial, index) => (
-                <div key={index} className="min-w-[350px] bg-white rounded-2xl p-6 shadow-lg border border-sage/10 relative">
+                <div key={index} className="min-w-[380px] bg-white rounded-2xl p-6 shadow-lg border border-sage/10 relative flex-shrink-0">
                   <div className="absolute top-4 left-4">
                     <Quote className="w-8 h-8 text-amber-600/20" />
                   </div>
                   <div className="flex items-start space-x-4 mb-4 pt-8">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
-                      <div className="w-full h-full bg-gradient-to-br from-sage to-teal flex items-center justify-center text-white font-semibold text-lg">
-                        {testimonial.name.charAt(0)}
-                      </div>
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground text-lg">{testimonial.name}</h4>
