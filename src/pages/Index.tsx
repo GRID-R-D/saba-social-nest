@@ -432,33 +432,19 @@ const Index = () => {
 
           {/* Moving Testimonials */}
           <div className="overflow-hidden relative">
-            <div className="flex animate-[slide-horizontal_40s_linear_infinite] space-x-6 will-change-transform">
+            <style>{`
+              @keyframes saba-slider {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+              }
+            `}</style>
+            <div
+              className="flex space-x-4 will-change-transform"
+              style={{
+                animation: 'saba-slider 18s linear infinite',
+              }}
+            >
               {[
-                {
-                  name: "Neeta, 35",
-                  role: "Teacher",
-                  text: "I was overwhelmed. Everything! They filtered meetings, and even planned chemistry was undeniable, allowing me to focus on connecting with someone special. We had a beautiful wedding!",
-                  image: marriageCounsellingImg
-                },
-                {
-                  name: "Priya, 32",
-                  role: "Software Engineer",
-                  text: "I met my husband through their service. They genuinely care about their clients. They filtered out the creeps and involved my parents, allowing me to focus on connecting with someone special.",
-                  image: datingCoachImg
-                },
-                {
-                  name: "Vikram, 36",
-                  role: "University Lecturer",
-                  text: "Tired of endless messages, I found this service. They understood my needs and filtered through profiles. One day, they found someone who shared my love for technology and career ambitions. We clicked instantly!",
-                  image: personalTherapyImg
-                },
-                {
-                  name: "Kamini, 29",
-                  role: "Lawyer",
-                  text: "I was skeptical about online matchmaking, but this service changed my perspective. They thoroughly vetted profiles and introduced me to a woman who shared my passion for literature. We're in a meaningful relationship.",
-                  image: nutritionistImg
-                },
-                // Duplicate set for seamless infinite loop
                 {
                   name: "Neeta, 35",
                   role: "Teacher",
@@ -484,7 +470,54 @@ const Index = () => {
                   image: nutritionistImg
                 }
               ].map((testimonial, index) => (
-                <div key={index} className="min-w-[380px] bg-white rounded-2xl p-6 shadow-lg border border-sage/10 relative flex-shrink-0">
+                <div key={index} className="min-w-[260px] max-w-[260px] bg-white rounded-2xl p-4 shadow-lg border border-sage/10 relative flex-shrink-0">
+                  <div className="absolute top-4 left-4">
+                    <Quote className="w-8 h-8 text-amber-600/20" />
+                  </div>
+                  <div className="flex items-start space-x-4 mb-4 pt-8">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-lg">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{testimonial.text}</p>
+                </div>
+              ))}
+              {/* Duplicate set for seamless infinite loop */}
+              {[
+                {
+                  name: "Neeta, 35",
+                  role: "Teacher",
+                  text: "I was overwhelmed. Everything! They filtered meetings, and even planned chemistry was undeniable, allowing me to focus on connecting with someone special. We had a beautiful wedding!",
+                  image: marriageCounsellingImg
+                },
+                {
+                  name: "Priya, 32",
+                  role: "Software Engineer",
+                  text: "I met my husband through their service. They genuinely care about their clients. They filtered out the creeps and involved my parents, allowing me to focus on connecting with someone special.",
+                  image: datingCoachImg
+                },
+                {
+                  name: "Vikram, 36",
+                  role: "University Lecturer",
+                  text: "Tired of endless messages, I found this service. They understood my needs and filtered through profiles. One day, they found someone who shared my love for technology and career ambitions. We clicked instantly!",
+                  image: personalTherapyImg
+                },
+                {
+                  name: "Kamini, 29",
+                  role: "Lawyer",
+                  text: "I was skeptical about online matchmaking, but this service changed my perspective. They thoroughly vetted profiles and introduced me to a woman who shared my passion for literature. We're in a meaningful relationship.",
+                  image: nutritionistImg
+                }
+              ].map((testimonial, index) => (
+                <div key={`dup-${index}`} className="min-w-[260px] max-w-[260px] bg-white rounded-2xl p-4 shadow-lg border border-sage/10 relative flex-shrink-0" aria-hidden="true">
                   <div className="absolute top-4 left-4">
                     <Quote className="w-8 h-8 text-amber-600/20" />
                   </div>
