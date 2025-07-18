@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Shield, Clock, Users, Phone, MessageCircle, Scale, Wallet, User, Baby, Stethoscope, Activity, Globe, Star, CheckCircle, Calendar, ArrowRight, Menu, X, Sparkles, Zap, Award } from "lucide-react";
+import { Heart, Shield, Clock, Users, Phone, MessageCircle, Scale, Wallet, User, Baby, Stethoscope, Activity, Globe, Star, CheckCircle, Calendar, ArrowRight, Menu, X, Sparkles, Zap, Award, BarChart3, Quote } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import therapyImage from "@/assets/therapy-session.jpg";
 import expertTeamImage from "@/assets/expert-team.jpg";
@@ -383,60 +383,100 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gradient-secondary/10 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-purple opacity-8 rounded-full -translate-y-36 -translate-x-36"></div>
-        <div className="absolute bottom-0 right-0 w-56 h-56 bg-gradient-sunset opacity-12 rounded-full translate-y-28 translate-x-28"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div>
-              <div className="flex items-center mb-6">
-                <Award className="w-8 h-8 text-accent-purple mr-3" />
-                <h2 className="text-4xl font-bold text-foreground">Our Success Stories</h2>
+      {/* Success Stories & Testimonials */}
+      <section className="py-20 bg-gradient-to-br from-sage/5 to-teal/5">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              See how we've helped our <span className="text-amber-600">clients find lasting wellness</span>
+            </h2>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Heart className="w-8 h-8 text-amber-600" />
               </div>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Real stories from real people who found support and healing with SABA SOCIAL. 
-                Every journey is unique, and every success story inspires us to do better.
-              </p>
-              
-              <div className="grid gap-6">
-                {testimonials.map((testimonial, index) => {
-                  const gradients = ['gradient-warm', 'gradient-cool', 'gradient-purple'];
-                  const gradient = gradients[index % gradients.length];
-                  
-                  return (
-                    <Card key={index} className="shadow-medium hover:shadow-heavy transition-all duration-300 group">
-                      <CardContent className="p-6">
-                        <div className="flex mb-4">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-accent-warm text-accent-warm" />
-                          ))}
-                        </div>
-                        <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                        <div className="flex items-center">
-                          <div className={`w-12 h-12 bg-${gradient} rounded-full flex items-center justify-center text-white font-semibold mr-4 group-hover:scale-110 transition-transform`}>
-                            {testimonial.name.charAt(0)}
-                          </div>
-                          <div>
-                            <p className="font-semibold text-foreground">{testimonial.name}</p>
-                            <p className="text-sm text-muted-foreground">Verified Client</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
+              <div className="text-5xl font-bold text-foreground mb-2">1000+</div>
+              <div className="text-lg text-muted-foreground">Successful Sessions</div>
             </div>
-            
-            <div className="lg:ml-8">
-              <img 
-                src={meditationImage} 
-                alt="Peaceful meditation representing wellness and inner peace" 
-                className="rounded-2xl shadow-heavy w-full h-auto object-cover"
-              />
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <BarChart3 className="w-8 h-8 text-amber-600" />
+              </div>
+              <div className="text-5xl font-bold text-foreground mb-2">95%</div>
+              <div className="text-lg text-muted-foreground">Success Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Star className="w-8 h-8 text-amber-600 fill-amber-600" />
+              </div>
+              <div className="text-5xl font-bold text-foreground mb-2">4.9/5</div>
+              <div className="text-lg text-muted-foreground">Client Satisfaction</div>
+            </div>
+          </div>
+
+          {/* Moving Testimonials */}
+          <div className="overflow-hidden relative">
+            <div className="flex animate-[slide_30s_linear_infinite] space-x-6">
+              {[
+                {
+                  name: "Tanya, 29",
+                  role: "Fitness Instructor",
+                  text: "This service genuinely supported me. They took care of the entire process, allowing me to focus on my training. They introduced me to a wonderful gentleman who shared my love for fitness and healthy lifestyle. The peace of mind was invaluable.",
+                  image: "/src/assets/therapy-session.jpg"
+                },
+                {
+                  name: "Raj, 33",
+                  role: "Financial Analyst", 
+                  text: "I wanted a curated experience, and they delivered. They found me matches that genuinely resonated with me. One connection led to something special, and my family's involvement made the process even smoother.",
+                  image: "/src/assets/expert-team.jpg"
+                },
+                {
+                  name: "Seema, 34",
+                  role: "HR Manager",
+                  text: "SABA made wellness easy by managing initial communications. They connected me with someone who shared my passion for volunteer work. Our first session involved serving at a local charity. I appreciate how they prioritized my values.",
+                  image: "/src/assets/meditation-wellness.jpg"
+                },
+                {
+                  name: "Rina, 28",
+                  role: "Graphic Designer",
+                  text: "Dealing with personal challenges, this service ensured I met compatible individuals. I remember feeling nervous about my journey, but their guidance shielded me from unnecessary stress and helped me find peace.",
+                  image: "/src/assets/video-consultation.jpg"
+                },
+                // Duplicate for seamless loop
+                {
+                  name: "Tanya, 29",
+                  role: "Fitness Instructor",
+                  text: "This service genuinely supported me. They took care of the entire process, allowing me to focus on my training. They introduced me to a wonderful gentleman who shared my love for fitness and healthy lifestyle. The peace of mind was invaluable.",
+                  image: "/src/assets/therapy-session.jpg"
+                },
+                {
+                  name: "Raj, 33",
+                  role: "Financial Analyst", 
+                  text: "I wanted a curated experience, and they delivered. They found me matches that genuinely resonated with me. One connection led to something special, and my family's involvement made the process even smoother.",
+                  image: "/src/assets/expert-team.jpg"
+                }
+              ].map((testimonial, index) => (
+                <div key={index} className="min-w-[350px] bg-white rounded-2xl p-6 shadow-lg border border-sage/10 relative">
+                  <div className="absolute top-4 left-4">
+                    <Quote className="w-8 h-8 text-amber-600/20" />
+                  </div>
+                  <div className="flex items-start space-x-4 mb-4 pt-8">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
+                      <div className="w-full h-full bg-gradient-to-br from-sage to-teal flex items-center justify-center text-white font-semibold text-lg">
+                        {testimonial.name.charAt(0)}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-lg">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{testimonial.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
