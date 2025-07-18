@@ -242,8 +242,7 @@ const Index = () => {
               <h2 className="text-4xl font-bold text-foreground">What Brings You Here?</h2>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Are you seeking guidance in relationships, intimacy, nutrition, mental wellness, law, or finance? 
-              SABA SOCIAL is your nest of supergood feel anchors.
+              We are among the rare wellness advocates globally who not only offer sessions but also maintain regular communication on our online platforms, sharing myth-busting insights and correcting misleading trends for your health and wellness!
             </p>
           </div>
 
@@ -603,7 +602,7 @@ const Index = () => {
             <div className="col-span-2">
               <h3 className="text-2xl font-bold mb-4">SABA SOCIAL</h3>
               <p className="text-white/80 mb-6 max-w-md">
-                Nest of supergood feel anchors for modern life. Your journey to wellness starts here.
+                So if you're curious about saba social, you could just say it as a nest of supergood feel anchors which help you stay safe & warm during storms related to personal relationships, marriage, nutrition, intimacy, personal counseling, legal navigators, CA, dermatology
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon" className="text-white hover:text-primary">
